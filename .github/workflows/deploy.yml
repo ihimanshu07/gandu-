@@ -22,6 +22,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port : 22 
           script: |
+            cd /home/ubuntu/example/gandu-
+            ls
             git pull origin master 
             ls 
             npm install
