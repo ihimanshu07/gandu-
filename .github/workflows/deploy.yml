@@ -1,0 +1,27 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - master 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    # getting the code from the repo 
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: ls
+            # cd /path/to/your/application
+            # git pull origin main # Or copy files from the runner
+            # # Add commands to install dependencies, build, or restart services
+            # # For example: npm install && npm start
