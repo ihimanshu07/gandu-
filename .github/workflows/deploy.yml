@@ -27,6 +27,7 @@ jobs:
             npm run build
             npm start
 
+
             # cd /path/to/your/application
             # git pull origin main # Or copy files from the runner
             # # Add commands to install dependencies, build, or restart services
