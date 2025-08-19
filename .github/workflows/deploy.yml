@@ -28,7 +28,8 @@ jobs:
             ls 
             npm install
             npm run build
-            npm start
+            echo "Deployment completed successfully!"
+            
 
 
             # cd /path/to/your/application
